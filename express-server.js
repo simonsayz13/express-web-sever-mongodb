@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Set root of route
-app.use('/students', studentRoute)
+app.use('/', studentRoute)
 
 // set port, listen for requests
 const PORT = process.env.PORT || 6969;
