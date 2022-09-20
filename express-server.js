@@ -5,9 +5,11 @@ const mongoose = require('mongoose');
 
 const studentRoute = require('./routes/students.route')
 
+const mongodbURI = process.env.mongodbURI
+console.log(mongodbURI)
 // Establish mongoDB connection
 mongoose
-.connect('mongodb+srv://admin:Changeme_123@db1.5y8jmgl.mongodb.net/students?retryWrites=true&w=majority')
+.connect(mongodbURI)
 .then( connected => {
   console.log(`Connected to MongoDB! Database name: ${connected.connections[0].name}`)
 })
