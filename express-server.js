@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require('mongoose');
 
-const studentRoute = require('./routes/students.route')
+const userRoute = require('./routes/users.route')
 
 const mongodbURI = process.env.mongodbURI
 console.log(mongodbURI)
@@ -28,10 +28,10 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Set root of route
-app.use('/', studentRoute)
+app.use('/', userRoute)
 
 // set port, listen for requests
-const PORT = process.env.PORT || 6969;
+const PORT = process.env.PORT || 8081;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
